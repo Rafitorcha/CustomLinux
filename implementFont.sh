@@ -1,6 +1,8 @@
 #! /bin/bash
 
-textToCenter=('llevará una carpeta con fuente o sólo la fuente?'
+textToCenter=('Agregar fuente?                                a'
+	'Remover fuente                                 r'
+	'llevará una carpeta con fuente o sólo la fuente?'
 	'Fuente                                         f'
 	'Directorio                                     d'
 	'acontinuación, se mostrará en el sitio actual sus archivos'
@@ -10,6 +12,8 @@ textToCenter=('llevará una carpeta con fuente o sólo la fuente?'
 	'introduzca nombre de la fuente de letra'
 	'introduzca nombre del directorio'
 	'trabajo finalizado!'
+	'Add font?                                      a'
+	'Remove font                                    r'
 	'will it carry a folder with fonts or just the fonts?'
 	'Font                                           f'
 	'Directory                                      d'
@@ -22,16 +26,116 @@ textToCenter=('llevará una carpeta con fuente o sólo la fuente?'
 	'job finished!'
 )
 
+routesD(){
+	echo $(clear >&2)
+			if [ "$language" -eq 10 ]; then
+
+for i in {17..19}; do
+		center
+	done
+
+else
+
+for i in {5..7}; do
+		center
+	done
+
+fi
+
+		ls
+
+			if [ "$language" -eq 10 ]; then
+
+for i in {19..19}; do
+		center
+	done
+
+else
+
+for i in {8..8}; do
+		center
+	done
+
+fi
+
+			if [ "$language" -eq 10 ]; then
+
+for i in {22..22}; do
+		center
+	done
+
+else
+
+for i in {11..11}; do
+		center
+	done
+
+fi
+
+		read fuente
+		if [ $switch -eq 10 ]; then
+		sudo cp -r $directorio/$fuente /usr/share/fonts/truetype/
+		else
+		cd /usr/share/fonts/truetype/
+		sudo rm -r /usr/share/fonts/truetype/$fuente
+		fi
+}
+
+routesC(){
+
+		echo $(clear >&2)
+
+			if [ "$language" -eq 10 ]; then
+
+for i in {17..19}; do
+		center
+	done
+
+else
+
+for i in {5..7}; do
+		center
+	done
+
+fi
+
+		ls
+
+		echo ""
+
+			if [ "$language" -eq 10 ]; then
+
+for i in {20..21}; do
+		center
+	done
+
+else
+
+for i in {8..9}; do
+		center
+	done
+
+fi
+
+		read fuente
+
+		if [ $switch -eq 10 ]; then
+		sudo cp $directorio/"$fuente.ttf" /usr/share/fonts/truetype/
+		else
+		cd /usr/share/fonts/truetype/
+		sudo rm -r /usr/share/fonts/truetype/"$fuente.ttf"
+		fi
+}
+
 function center() {
 
 	variable=${#textToCenter}
-
 	echo "${textToCenter[i]}"
 	echo ''
 
 }
 
-EnglishMenu() {
+Menu() {
 
 	echo $(clear >&2)
 
@@ -39,122 +143,91 @@ EnglishMenu() {
 	echo ""
 	echo ""
 
-	for i in {10..12}; do
+
+
+	if [ "$language" -eq 10 ]; then
+
+for i in {12..13}; do
 		center
 	done
+
+else
+
+for i in {0..1}; do
+		center
+	done
+
+fi
+
+read -s -n 1 modify
+
+case $modify in
+a)
+switch=10
+;;
+r)
+switch=20
+;;
+*)
+Menu
+esac
+
+echo $(clear &>2)
+
+	if [ "$language" -eq 10 ]; then
+
+for i in {14..16}; do
+		center
+	done
+
+else
+
+for i in {2..4}; do
+		center
+	done
+
+fi
+
+
+	returntoCero
+
+	echo $(clear >&2)
+
+if [ "$language" -eq 10 ]; then
+
+for i in {23..23}; do
+		center
+	done
+
+else
+
+for i in {11..11}; do
+		center
+	done
+
+fi
+
+}
+
+returntoCero(){
 
 	read -s -n 1 decision
 
-	case $decision in
-	f)
-
-		echo $(clear >&2)
-
-		for i in {13..15}; do
-			center
-		done
-
-		ls
-		echo ""
-		for i in {16..17}; do
-			center
-		done
-
-		read fuente
-		sudo cp $directorio/"$fuente.ttf" /usr/share/fonts/truetype/
-		;;
-	d)
-
-		echo $(clear >&2)
-
-		for i in {13..15}; do
-			center
-		done
-
-		ls
-
-		for i in {16..16}; do
-			center
-		done
-
-		for i in {18..18}; do
-			center
-		done
-
-		read fuente
-		sudo cp -r $directorio/$fuente /usr/share/fonts/truetype/
-		;;
-	esac
-
-	echo $(clear >&2)
-
-	for i in {19..19}; do
-		center
-	done
-}
-
-SpanishMenu() {
-
-	echo $(clear >&2)
-
-	echo ""
-	echo ""
-	echo ""
-
-	for i in {0..2}; do
-		center
-	done
-
-	read -s -n 1 decision
 
 	case $decision in
 	f)
-
-		echo $(clear >&2)
-
-		for i in {3..5}; do
-			center
-		done
-
-		ls
-
-		for i in {6..7}; do
-			center
-		done
-
-		read fuente
-		sudo cp $directorio/"$fuente.ttf" /usr/share/fonts/truetype/
+	routesC
 		;;
 	d)
-
-		echo $(clear >&2)
-
-		for i in {3..5}; do
-			center
-		done
-
-		ls
-		echo ""
-
-		for i in {6..6}; do
-			center
-		done
-
-		for i in {8..8}; do
-			center
-		done
-
-		read fuente
-		sudo cp -r $directorio/$fuente /usr/share/fonts/truetype/
+		routesD
+		;;
+*)
+returntoCero
 		;;
 	esac
-
-	echo $(clear >&2)
-
-	for i in {9..9}; do
-		center
-	done
 }
+
+start(){
 
 if [ ! -d /usr/share/fonts ]; then
 
@@ -173,11 +246,23 @@ else
 
 	case $desition in
 	e)
-		EnglishMenu
+			language=10
+
+		Menu
 		;;
 	s)
-		SpanishMenu
+			language=20
+
+		Menu
+		;;
+		*)
+		start
+	echo ''
 		;;
 	esac
 
 fi
+
+}
+
+start
