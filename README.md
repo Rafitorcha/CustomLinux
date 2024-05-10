@@ -13,7 +13,7 @@ Features
 
 <br>
 
-Install
+Usability
 -----------
 
 If you ask, some texts like this:
@@ -21,12 +21,6 @@ If you ask, some texts like this:
     'edit text              e'
 
 Are just a instruction that you can do pressing the keyboard letter similar to the right side.
-Select the language and follow the terminal instructions. Finally, you can use the font.
+Select the language and follow the terminal instructions. Finally, you can use or uninstall the font.
 
 <br>
-
-Uninstall
------------
-
-I gonna sleep, catch me later if you need it
-
