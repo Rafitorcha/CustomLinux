@@ -15,6 +15,9 @@ Features
 
 Usability
 -----------
+If you don't know execute shell script, copy and paste in the terminal:
+
+    ./implementFont.sh
 
 If you ask, some texts like this:
 
