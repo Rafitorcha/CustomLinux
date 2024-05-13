@@ -1,6 +1,6 @@
-<h1 align="center">ImplementFontER</h1>  
+<h1 align="center">CLinux</h1>  
 
-A shell-script that installs fonts and directories for themes, icons and fonts
+A shell-script that customize your linux distro installing fonts or directories for themes, icons and fonts
 
 <br>
 
