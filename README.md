@@ -1,6 +1,6 @@
 <h1 align="center">ImplementFontER</h1>  
 
-A shell-script that installs fonts and directories
+A shell-script that installs fonts and directories for themes, icons and fonts
 
 <br>
 
@@ -17,7 +17,7 @@ Usability
 -----------
 If you don't know execute shell script, copy and paste in the terminal:
 
-    ./implementFont.sh
+    ./CLinux.sh
 
 If you ask, some texts like this:
 
