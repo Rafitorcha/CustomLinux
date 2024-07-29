@@ -1,0 +1,12 @@
+nmcli r wifi on
+nmcli d wifi list
+
+echo "Introduce the name of the network"
+
+read net
+
+echo "Introduce the password of the network"
+
+read pass
+
+nmcli d wifi connect $net password $pass

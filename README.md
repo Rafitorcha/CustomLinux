@@ -1,6 +1,6 @@
 <h1 align="center">CLinux</h1>  
 
-A shell-script that customize your linux distro installing fonts or directories for themes, icons and fonts
+A couple of shell-scripts that customize and do quickly regular tasks for your linux distro, like installing fonts or directories for themes, icons and fonts, finally, internet connection.
 
 <br>
 
@@ -12,6 +12,11 @@ Features
 - Write the <b>name</b> of the directory
 
 <br>
+
+Distro
+-----------
+- Arch
+- Ubuntu (IDK if the sh for internet works)
 
 Usability
 -----------
